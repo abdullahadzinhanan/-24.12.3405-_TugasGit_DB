@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - My App</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Katalog Event</title>
 </head>
-<body class="bg-slate-50 flex flex-col items-center justify-center min-h-screen p-6">
-    <div class="max-w-4xl w-full">
-        <h1 class="text-3xl font-bold text-slate-800 mb-6 text-center">Daftar Event AmikomEventHub</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500 hover:shadow-lg transition">
-                <h3 class="font-bold text-lg text-slate-700">Workshop UI/UX</h3>
-                <p class="text-slate-500 text-sm">Belajar desain modern dengan Figma.</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500 hover:shadow-lg transition">
-                <h3 class="font-bold text-lg text-slate-700">Web Development Bootcamp</h3>
-                <p class="text-slate-500 text-sm">Kuasai Laravel dalam 30 hari.</p>
-            </div>
-        </div>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 flex justify-center space-x-6">
+        <a href="/profil" class="text-blue-600 font-bold border-b-2 border-blue-600">Profil</a>
+        <a href="/katalog" class="hover:text-blue-600">Katalog</a>
+        <a href="/bantuan" class="hover:text-blue-600">Bantuan</a>
+    </nav>
 
-        <div class="mt-10 flex justify-center gap-3">
-            <a href="/profil" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50 transition">Profil</a>
-            <a href="/katalog" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">Katalog</a>
-            <a href="/bantuan" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg hover:bg-slate-50 transition">Bantuan</a>
+    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg">
+        <div class="flex flex-col items-center">
+            <div class="w-24 h-24 bg-blue-500 rounded-full mb-4 flex items-center justify-center text-white text-3xl font-bold">JD</div>
+            <h1 class="text-2xl font-bold">Ridho Karunia Setiawan</h1>
+            <p class="text-gray-500 italic">24.12.3383</p>
+            <div class="mt-4 w-full border-t pt-4">
+                <p class="text-sm"><strong>Email:</strong> awansetiawann999@students.amikom.ac.id</p>
+                <p class="text-sm"><strong>Lokasi:</strong> Yogyakarta, Indonesia</p>
+            </div>
         </div>
     </div>
 </body>
