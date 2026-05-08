@@ -4,10 +4,11 @@
 @section('page_title', 'Kelola Kategori')
 @section('page_subtitle', 'Buat dan atur kategori acara Anda di sini.')
 @section('content')
-<div class="mb-4 flex justify-between items-center">
-    <form method="GET" class="flex gap-2">
-        <div class="relative">
-            <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Cari kategori..." class="w-64 px-4 py-2 pl-10 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition">
+
+<div class="mb-4 flex items-center gap-3">
+    <form method="GET" class="flex gap-2 flex-1">
+        <div class="relative flex-1">
+            <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Cari kategori..." class="w-full px-4 py-2 pl-10 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition">
             <svg class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
@@ -17,10 +18,11 @@
         <a href="{{ route('admin.categories') }}" class="px-4 py-2 border border-slate-200 text-slate-600 rounded-xl font-bold hover:bg-slate-50 transition">Reset</a>
         @endif
     </form>
-    <a href="{{ route('admin.categories.create') }}" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 active:scale-95 transition">
+    <a href="{{ route('admin.categories.create') }}" class="inline-block px-6 py-3 bg-indigo-600 text-white rounded-2xl font-bold shadow-lg shadow-indigo-100 hover:bg-indigo-700 active:scale-95 transition whitespace-nowrap">
         + Tambah Kategori
     </a>
 </div>
+
 <div class="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden">
     <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
