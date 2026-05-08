@@ -86,8 +86,49 @@
                                 <td colspan="4" class="px-8 py-6 text-center text-slate-500">Belum ada transaksi.</td>
                             </tr>
                         @endforelse
-                    </tbody>
-                </table>
+</tbody>
+                 </table>
+             </div>
+         </div>
+
+        <!-- Events Grid -->
+        <div class="mt-10">
+            <h3 class="font-black text-xl mb-6">Event Terbaru</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($events as $event)
+                <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div class="relative overflow-hidden aspect-[3/4]">
+                        @if($event->poster_path)
+                        <img src="{{ asset('storage/' . $event->poster_path) }}" alt="{{ $event->title }}"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        @else
+                        <img src="https://placehold.co/400x500" alt="{{ $event->title }}"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        @endif
+                        <div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-lg text-xs font-bold uppercase text-indigo-600">
+                            {{ $event->category->name ?? 'Umum' }}</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition">{{ $event->title }}</h3>
+                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-4">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>{{ $event->date->format('d M Y, H:i') }}</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t">
+                            <span class="text-2xl font-black text-indigo-600">Rp {{ number_format($event->price, 0, ',', '.') }}</span>
+                            <a href="{{ route('admin.events.edit', $event->id) }}"
+                                class="px-5 py-2 bg-indigo-50 text-indigo-600 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition">Kelola</a>
+                        </div>
+                    </div>
+                </div>
+                @empty
+                <div class="col-span-3 text-center py-20">
+                    <p class="text-slate-500 text-lg">Belum ada event yang tersedia.</p>
+                </div>
+                @endforelse
             </div>
         </div>
-@endsection
+    @endsection
